@@ -80,7 +80,33 @@ function loadQandA() {
             $('.question').text("The ANSWER is: " + triviaForGame[indexQandA].answer[correct]);
             correctAnswer();
         }
+        else {
+            answered = true;
+            $('.question').text("You Chose: = " + triviaForGame[indexQandA].answer[id] + "---but the correct answer is: " + triviaForGame[indexQandA].answer[correct]);
+            incorrectAnswer();
+        }
     })
+}
+
+function time() {
+    if (timeRemaining === 0) {
+        answered = true;
+        clearInterval(intervalId);
+        $('.question').text('The correct answer is: ' + triviaForGame[indexQandA].answer[correct]);
+        unansweredQuestions();
+    }
+    else if (answered === true) {
+        clearInterval(intervalId);
+    }
+    else {
+        timeRemaining--;
+        $('.timeRemaining').text('Time Remaining: ' + timeRemaining);
+    }
+}
+
+function correctAnswer() {
+    correctAnswers++;
+    $
 }
     
 
