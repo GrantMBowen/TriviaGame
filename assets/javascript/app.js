@@ -21,7 +21,7 @@
 
 $(document).ready(function () {
 
-    //Global Variables
+    //Define Global Variables
 
     var correctAnswers = 0;
     var incorrectAnswers = 0;
@@ -41,15 +41,24 @@ $(document).ready(function () {
             image: ("assets/images/honkytonk.jpg")
         },
         {
-            question: "who is Michael Phelps?",
-            answer: ["a singer", "a writer", "an athlete", "all of the above"],
+            question: "'The Night the Lights Went Out in Georgia' has become a staple of country star Reba McEntire's music, but she was not the original singer. Who was the singer, who also starred alongside a redhead comedian in a comedy sketch show, who originally recorded the bloody ballad?",
+            answer: ["Faith Hill", "Tammy Wynette", "Vicki lawrence", "Loretta Lynn"],
             correct: 2,
-            image: ("assets/image/phelps.jpg")
-        }
+            image: ("assets/images/vickilawrence.jpg")
+        },
+        {
+            question: "'The devil went down to Georgia He was looking for a soul to steal He was in a bind cos he was way behind He was willin to make a deal' This song became the signature song for which group?",
+            answer: ["Old Crow Medicine Show", "Merle Haggard and the Strangers", "Bob Wills and His Texas Playboys", "The Charlie Daniels Band"],
+            correct: 3,
+            image: ("assets/image/vickylawrence.jpg")
+        },  
 
     ];
 
+//--Game Start (reset) document.onload
 
+//         --press start to Begin 
+//  Define Function that sets the start of the game
 
     function startGame() {
         console.log("now we're starting");
@@ -76,26 +85,27 @@ $(document).ready(function () {
         }
 
         $('h4').click(function () {
-            var id = $(this).attr('id');
-            if (id === correct) {
+            id = $(this).attr('id');
+            if (id == correct) {
                 answered = true;
                 $('.question').text("The ANSWER is: " + triviaForGame[indexQandA].answer[correct]);
                 correctAnswer();
-            } else {
+            } 
+            else {
                 answered = true;
-                $('.question').text("You Chose: = " + triviaForGame[indexQandA].answer[id] + "---but the correct answer is: " + triviaForGame[indexQandA].answer[correct]);
+                $('.question').text("You Chose: " + triviaForGame[indexQandA].answer[id] + "---but the correct answer is: " + triviaForGame[indexQandA].answer[correct]);
                 incorrectAnswer();
             }
-        })
+        });
     }
 
     function timer() {
-        if (timeRemaining === 0) {
-            answered = true;
+        if (timeRemaining == 0) {
+            answered != true;
             clearInterval(intervalId);
             $('.question').text('The correct answer is: ' + triviaForGame[indexQandA].answer[correct]);
-            unansweredQuestions();
-        } else if (answered === true) {
+            UA();
+        } else if (answered == true) {
             clearInterval(intervalId);
         } else {
             timeRemaining--;
@@ -106,7 +116,7 @@ $(document).ready(function () {
     function correctAnswer() {
         correctAnswers++;
         $('.timeRemaining').text('YOU ARE CORRECT!').css({
-            'color': 'red'
+            'color': '#cc0000'
         });
         resetRound();
     }
@@ -114,15 +124,15 @@ $(document).ready(function () {
     function incorrectAnswer() {
         incorrectAnswers++;
         $('.timeRemaining').text('YOU ARE WRONG!').css({
-            'color': 'red'
+            'color': '#cc0000'
         });
         resetRound();
     }
 
-    function unansweredQuestions() {
+    var UA = function unansweredQs() {
         unansweredQuestions++;
         $('.timeRemaining').text("TIME'S UP!").css({
-            'color': 'red'
+            'color': '#cc0000'
         });
         resetRound();
     }
@@ -147,7 +157,7 @@ $(document).ready(function () {
                 $('.answers').append('<h4 class= answersAll end>Unanswered Questions: ' + unansweredQuestions + '</h4>');
                 setTimeout(function () {
                     location.reload();
-                }, 7000);
+                }, 1000 * 10);
 
 
             }, 5000);
