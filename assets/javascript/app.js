@@ -35,13 +35,13 @@ var triviaForGame = [{
 
         question: "who is Johnny Cash?",
         answer: ["a singer", "a writer", "an athlete", "all of the above"],
-        correct: 0 
+        correct: 0, 
         image: ("assets/images/cash.jpg")
     }, 
     {
         question: "who is Michael Phelps?",
         answer: ["a singer", "a writer", "an athlete", "all of the above"],
-        correct: 3 
+        correct: 3, 
         image: ("assets/image/phelps.jpg")
     }
 
@@ -58,33 +58,62 @@ function startGame () {
     loadQandA();
 }
 
-function load
-    $("#question").text(questions[i].question);
-    for (let i = 0; i < questions.length; i++) {
-        
-        for (let y = 0; y < questions[i].possibles.length; y++) {
-            $("<button>").addClass(".answer-btn");
-            $(".answer-btn").attr("data-id", y);
-            
+function loadQandA() {
+    answered = false;
+    timeRemaining = 16;
+    intervalId = setInterval(timer, 1000);
+    if (answered === false) {
+        timer();
+    }
+    correct = triviaForGame[indexQandA].correct;
+    var question = triviaForGame[indexQandA].question;
+    $('.question').html(question);
+    for (var i = 0; i < 4; i++) {
+        var answer = triviaForGame[indexQandA].answer[i];
+        $('.answers').append('<h4 class= answersAll id=' + i + '>' + answer + '</h4>');
+    }
+
+    $('h4').click(function () {
+        var id = $(this).attr('id');
+        if (id === correct) {
+            answered = true;
+            $('.question').text("The ANSWER is: " + triviaForGame[indexQandA].answer[correct]);
+            correctAnswer();
         }
+    })
+}
+    
+
+
+
+
+
+// $("#question").text(questions[i].question);
+//     for (let i = 0; i < questions.length; i++) {
+        
+//         for (let y = 0; y < questions[i].possibles.length; y++) {
+//             $("<button>").addClass(".answer-btn");
+//             $(".answer-btn").attr("data-id", y);
+            
+//         }
 
         
-    }
+//     }
 
 
-    function updateScore() {
-        // pull selected buton's data-id value
-        // compare to questions[i].correctAnswer
-        // if equal then correct ++ else ....
-    }
+//     function updateScore() {
+//         // pull selected buton's data-id value
+//         // compare to questions[i].correctAnswer
+//         // if equal then correct ++ else ....
+//     }
 
 
-}
-$(document).ready(function() {
+// }
+// $(document).ready(function() {
 
-   game (); 
+//    game (); 
 
-})
+// })
 
 // $("#button").on("click", game())
 

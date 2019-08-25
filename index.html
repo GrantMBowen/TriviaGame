@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Broadway Trivia Game!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TriviaGame</title>
+    <meta name="example timer" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../TriviaGame/assets/css/reset.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
 </head>
+
 <body>
-
-    <h1>Country Music Trivia</h1>
-    <h3>Timer</h3>
-    <h3 id="time-left">00:00</h3>
-    <br>
-    <br>
-    <h2>Question will be shown here:</h2>
-    <div id="questions-rendered-here">
-        <P id='possibleshown'>Possible Answer to Question</P>
-        <button class='answer-btn' data-id="0">A</button>
-        <br>
-        
-        <P id='possibleshown'>Possible Answer to Question</P>
-        <button class='answer-btn' data-id="1">B</button>
-        <br>
-        
-        <P id='possibleshown'>Possible Answer to Question</P>
-        <button class='answer-btn' data-id="2">C</button>
-        <br>
-        
-        <P id='possibleshown'>Possible Answer to Question</P>
-        <button class='answer-btn' data-id="3">D</button>
-        <br>
-        
+    <div id="wrapper">
+    <div id="gradient">
+        <div class="container">
+        <section class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="jumbotron animated zoomIn">
+                <h1>Adventure Trivia!</h1>
+                <h5 class="timeRemaining"></h5>
+                <h3 class="question questionHeader"></h3>
+                <div class="answers"></div>
+                <p class="start-button text-center animated zoomInDown">
+                <a class="btn btn-warning btn-lg startButton animated pulse infinite" href="#" role="button">
+                    <span class="glyphicon">PRESS TO START</span>
+                </a>
+                </p>
+            </div>
+            </div>
+        </section>
+        </div>
     </div>
-
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
+    </div>
+    <!-- local JS file link -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
