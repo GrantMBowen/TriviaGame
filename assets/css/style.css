@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  
+  
+  
+  #background {
+      background-image: url("../images/silent_movie_frame.jpg"); 
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+  }
+  
+  
+  .btn-primary {
+    background-color: #98BFA3;
+    border-color: #98BFA3;
+    margin-top: 50px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #6C8773;
+    border-color: #5F7866;
+  }
+  
+  .btn-primary:active:focus {
+    background-color: #41523F;
+    border-color: #334031;
+  }
+  
+
+  
+  /*---------------------------Main Page----------------------------*/
+  
+  html,
+  body,
+  #wrapper {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  body {
+    background-color: blue;
+    padding: 0px;
+    margin-top: 30px;
+    
+  }
+ 
+  .jumbotron h1 {
+    font-family: 'Rye', cursive;
+    font-size: 120px;
+    text-align: center;
+  }
+  
+  .jumbotron {
+    min-height: 60%;
+    min-height: 60vh;
+    /* display: flex; */
+    align-items: center;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    margin-top: 15%;
+    /* height: 100%; */
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  h3
+  {
+    
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #61302F;
+    margin-bottom: 40px;
+    line-height: 40px;
+  }
+  
+  h4
+  {
+    color: #F8FFFA;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: rgba(138, 146, 178, 0.6);
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+  
+  /*timer*/
+  h5
+  {
+    /* color: #343F38; */
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    font-family: Abyssopelagic;
+  }
+  .timeRemaining {
+    color: #cc0000;
+  }
+  .answerImage {
+    max-width: 500px;
+    max-height: 300px;
+    /*center image and limit size*/
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .answers {
+    margin-top: 30px;
+  }

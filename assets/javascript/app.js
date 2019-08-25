@@ -36,21 +36,45 @@ $(document).ready(function () {
     var triviaForGame = [{
 
             question: "What is a Honky-Tonk?",
-            answer: ["the name of a band", "a type of bar", "a musical instrument", "a chord used in country music ballads"],
+            answer: ["THE NAME OF A BAND", "A TYPE OF BAR", "A MUSICAL INSTRUMENT", "A CHORD USED IN COUNTRY MUSIC BALLADS"],
             correct: 1,
             image: ("assets/images/honkytonk.jpg")
         },
         {
             question: "'The Night the Lights Went Out in Georgia' has become a staple of country star Reba McEntire's music, but she was not the original singer. Who was the singer, who also starred alongside a redhead comedian in a comedy sketch show, who originally recorded the bloody ballad?",
-            answer: ["Faith Hill", "Tammy Wynette", "Vicki lawrence", "Loretta Lynn"],
+            answer: ["FAITH HILL", "TAMMY WYNETTE", "VICKI LAWRENCE", "LORETTA LYNN"],
             correct: 2,
             image: ("assets/images/vickilawrence.jpg")
         },
         {
             question: "'The devil went down to Georgia He was looking for a soul to steal He was in a bind cos he was way behind He was willin to make a deal' This song became the signature song for which group?",
-            answer: ["Old Crow Medicine Show", "Merle Haggard and the Strangers", "Bob Wills and His Texas Playboys", "The Charlie Daniels Band"],
+            answer: ["OLD CROW MEDICINE SHOW", "MERLE HAGGARD AND THE STRANGERS", "BOB WILLS AND HIS TEXAS PLAYBOYS", "THE CHARLIE DANIELS BAND"],
             correct: 3,
-            image: ("assets/image/vickylawrence.jpg")
+            image: ("assets/images/charliedaniels.png")
+        },  
+        {
+            question: "Jimmy Dean had a huge crossover hit in 1961 with a song about a miner that spawned two sequels, neither of which garnered the same success as the original. Name Dean's hit.",
+            answer: ["SIXTEEN TONS", "BLACK LUNG", "JOHN HENRY", "BIG BAD JOHN"],
+            correct: 0,
+            image: ("assets/images/jimmydean.jpg")
+        },  
+        {
+            question: " This song tells the story of stealing a car from an assembly line 'One Piece at a Time'. Who had a hit with it in 1976?",
+            answer: ["GARTH BROOKS", "JOHNNY CASH", "WILLIE NELSON", "JERRY REED"],
+            correct: 1,
+            image: ("assets/images/johnnycash.jpg")
+        },  
+        {
+            question: "'Amarillo by Morning' is best known as a George Strait hit. What other cowboy singer released this song before George Strait did?",
+            answer: ["DON WILLIAMS", "ROGER MILLER", "CHRIS LEDOUX", "JOHN MICHAEL MONTGOMERY"],
+            correct: 2,
+            image: ("assets/images/chrisledoux.jpg")
+        },  
+        {
+            question: "Who is known for the song ’Hello Darlin’?",
+            answer: ["GEORGE JONES", "CONWAY TWITTY", "CHRIS CHRISTOPHERSON", "JOHNNY HORTON"],
+            correct: 1,
+            image: ("assets/images/conwaytwitty.jpg")
         },  
 
     ];
@@ -88,12 +112,12 @@ $(document).ready(function () {
             id = $(this).attr('id');
             if (id == correct) {
                 answered = true;
-                $('.question').text("The ANSWER is: " + triviaForGame[indexQandA].answer[correct]);
+                $('.question').html("<h3>The ANSWER is: <h3 style='color: red;'> " + triviaForGame[indexQandA].answer[correct] + "</h3></h3>");
                 correctAnswer();
             } 
             else {
                 answered = true;
-                $('.question').text("You Chose: " + triviaForGame[indexQandA].answer[id] + "---but the correct answer is: " + triviaForGame[indexQandA].answer[correct]);
+                $('.question').html("<h3>You Chose: " + triviaForGame[indexQandA].answer[id] + "</h3><br><h3>---but the correct answer is: <h3 style='color: red;'> " + triviaForGame[indexQandA].answer[correct] + "</h3></h3>");
                 incorrectAnswer();
             }
         });
@@ -103,7 +127,7 @@ $(document).ready(function () {
         if (timeRemaining == 0) {
             answered != true;
             clearInterval(intervalId);
-            $('.question').text('The correct answer is: ' + triviaForGame[indexQandA].answer[correct]);
+            $('.question').html("<h3>The Correct Answer is: <h3 style='color: red;'> " + triviaForGame[indexQandA].answer[correct] + "</h3></h3>");
             UA();
         } else if (answered == true) {
             clearInterval(intervalId);
@@ -140,7 +164,7 @@ $(document).ready(function () {
 
     function resetRound() {
         $('.answersAll').remove();
-        $('.answers').append('<img class=answerImage width="150" height="150" src="' + triviaForGame[indexQandA].image + '">');
+        $('.answers').append('<img class=answerImage src="' + triviaForGame[indexQandA].image + '">');
         indexQandA++;
         if (indexQandA < triviaForGame.length) {
             setTimeout(function () {
