@@ -20,26 +20,45 @@
 // )
 
 //Global Variables
-var questions = [
-    {
+
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var unansweredQuestions = 0;
+var timeRemaining = 16;
+var intervalId;
+var indexQandA = 0;
+var answered = false;
+var correct;
+
+
+var triviaForGame = [{
+
         question: "who is Johnny Cash?",
-        possibles: ["a singer", "a writer", "an athlete", "all of the above"],
-        correctAnswer: 0 
+        answer: ["a singer", "a writer", "an athlete", "all of the above"],
+        correct: 0 
+        image: ("assets/images/cash.jpg")
     }, 
     {
         question: "who is Michael Phelps?",
-        possibles: ["a singer", "a writer", "an athlete", "all of the above"],
-        correctAnswer: 3 
+        answer: ["a singer", "a writer", "an athlete", "all of the above"],
+        correct: 3 
+        image: ("assets/image/phelps.jpg")
     }
 
 ];
 
 
-var correct = 0;
-var incorrect = 0;
-var unanswered = 0;
 
-function game () {
+function startGame () {
+    console.log("now we're starting");
+    $('.start-button').remove();
+    correctAnswers = 0;
+    incorrectAnswers = 0;
+    unansweredQuestions = 0;
+    loadQandA();
+}
+
+function load
     $("#question").text(questions[i].question);
     for (let i = 0; i < questions.length; i++) {
         
